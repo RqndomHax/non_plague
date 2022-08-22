@@ -1,11 +1,11 @@
-use bevy::prelude::*;
+mod entities;
+mod traits;
+
+use entities::human::*;
 
 fn main() {
-   App::new()
-       .add_system(hello_world_system)
-       .run();
-}
+    let mut humans: Vec<Human> = Vec::new();
 
-fn hello_world_system() {
-   println!("hello world");
+    Human::spawn(Human::Female, &mut humans);
+    println!("humans size = {}", humans.len());
 }
