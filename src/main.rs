@@ -1,11 +1,14 @@
 mod entities;
+mod game;
+mod modifiers;
 mod traits;
 
-use entities::human::*;
+use game::*;
 
 fn main() {
-    let mut humans: Vec<Human> = Vec::new();
+    let mut game = Game::init();
 
-    Human::spawn(Human::Female, &mut humans);
-    println!("humans size = {}", humans.len());
+    game.test_entity();
+    game.test_entity();
+    game.test_entity();
 }
